@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>New Dojo</h1>
+        <form action="/new_dojo" method="POST">
+            <label for="dname">Name:</label>
+            <input type="text" name="dname" id="dname">
+            <button type="submit" value="Create Dojo">Create</button>
+        </form>
+    </div>
+    <div>
+        <h2>All Dojos</h2>
+        <table border="1">
+            <th>
+                <tr>
+                    <th>City</th>
+                </tr>
+            </th>
+            <tbody>
+                <!--For Loop dojo citys-->
+                {% for c in all_dojos %}
+                <td><a href="/city/ninjas/{{c.id}}">{{c.name}}</a></td>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/ninjas/new">Add Ninja</a>
+    </div>
+</body>
+</html>
